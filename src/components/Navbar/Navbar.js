@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link ,useHistory} from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { makeStyles } from "@mui/material";
@@ -27,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
-    let userId = 5;
+    const classes = useStyles();
+
     return (
         <div>
             <AppBar position="static">
@@ -45,7 +45,7 @@ function Navbar() {
                         <Link className={classes.link} to="/">Home</Link>
                     </Typography>
                     <Typography variant="h6" >
-                        <Link className={classes.link} to={{ pathname: '/users' + userId }}>User</Link>
+                       <Link className={classes.link} to={{ pathname: '/users' + userId }}>User</Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
