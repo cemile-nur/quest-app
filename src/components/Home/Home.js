@@ -1,6 +1,6 @@
 import React, { useState,useEffects } from "react";
 import Post from '../Post/Post';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/material/styles';
 import PostForm from "../Post/PostForm";
 
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +34,7 @@ function Home() {
             }
         )
     }
+
     useEffects(() => {
         refreshPosts()
     }, [postList])
@@ -47,7 +48,7 @@ function Home() {
             <div className={classes.container}>
                 <PostForm userId={1} userName={"ddd"}  refreshPosts={refreshPosts} />
                 {postList.map(post => (
-                    <Post userId={post.userId} userName={post.userName} 
+                    <Post likes={post.postLikes} postId={post.id} userId={post.userId} userName={post.userName} 
                     title={post.title} text={post.text} > </Post>
                 ))}
             </div>

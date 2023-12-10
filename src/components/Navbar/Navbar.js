@@ -45,7 +45,7 @@ function Navbar() {
                         <Link className={classes.link} to="/">Home</Link>
                     </Typography>
                     <Typography variant="h6" >
-                       <Link className={classes.link} to={{ pathname: '/users' + userId }}>User</Link>
+                      <Link className={classes.link} to={{ pathname: '/users'  }}>User</Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
