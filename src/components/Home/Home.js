@@ -1,4 +1,4 @@
-import React, { useState,useEffects } from "react";
+import React, { useState, useEffect } from "react";
 import Post from '../Post/Post';
 import { makeStyles } from '@mui/material/styles';
 import PostForm from "../Post/PostForm";
@@ -35,7 +35,7 @@ function Home() {
         )
     }
 
-    useEffects(() => {
+    useEffect(() => {
         refreshPosts()
     }, [postList])
 

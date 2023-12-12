@@ -9,7 +9,7 @@ import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
 import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import CommentIcon from '@mui/icons-material/Comment';
@@ -120,8 +120,10 @@ function Post(props) {
 
   const checkLikes = () => {
     var likeControl = likes.find((like => like.userId === userId));
-    if (likeControl != null)
+    if(likeControl != null){
+      setLikeId(likeControl.id);
       setIsLiked(true);
+    }
   }
 
   useEffect(() => {
@@ -130,7 +132,6 @@ function Post(props) {
     else
       refreshComments();
   }, [commentList])
-
 
   useEffect(() => { checkLikes() },)
 
